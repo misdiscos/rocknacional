@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: rgb(141, 7, 252);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo del título "Reproductor de Música" */
+#title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #9e49ff; /* Color del título */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo del nombre de la canción */
+#song-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #eeec8b; /* Color del nombre de la canción */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+#audio-player {
+    display: none;
+}
+
+.player {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+}
+
+.album-cover {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+button {
+    font-size: 24px; /* Tamaño del icono */
+    padding: 15px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #00a6ed; /* Color de fondo */
+    color: white; /* Color del icono */
+    border: none; /* Quitar borde */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    transition: 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Barra de progreso */
+#progress-bar {
+    width: 100%;
+    height: 8px;
+    accent-color: #ff5733; /* Color personalizado */
+    cursor: pointer;
+}
+
+/* Control de volumen */
+#volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#volume-slider {
+    width: 100%;
+    height: 8px;
+    display: none; /* Oculto por defecto */
+    accent-color: #4CAF50; /* Color verde personalizado */
+    cursor: pointer;
+}
