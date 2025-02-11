@@ -32,14 +32,39 @@ function loadSong(index) {
     playPauseButton.textContent = "⏸️";
     
     // Mostrar nombre del archivo sin ruta
-    songTitle.textContent = songs[index].split("/").pop();
-
-    // Extrae solo el nombre del archivo sin la carpeta ni la extensión
     let fileName = songs[index].split("/").pop().replace(".mp3", "");
     songTitle.textContent = fileName;
 
     // Resetear la barra de progreso
     progressBar.value = 0;
+
+    // Configurar Media Session API para controles en segundo plano
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: fileName,
+            artist: "Artista Desconocido", // Puedes cambiar esto si tienes los datos
+            album: "Álbum Desconocido",
+            artwork: [{ src: "ruta-a-tu-imagen.jpg", sizes: "512x512", type: "image/png" }]
+        });
+
+        navigator.mediaSession.setActionHandler("play", () => {
+            audioPlayer.play();
+            playPauseButton.textContent = "⏸️";
+        });
+
+        navigator.mediaSession.setActionHandler("pause", () => {
+            audioPlayer.pause();
+            playPauseButton.textContent = "▶️";
+        });
+
+        navigator.mediaSession.setActionHandler("previoustrack", () => {
+            prevButton.click();
+        });
+
+        navigator.mediaSession.setActionHandler("nexttrack", () => {
+            nextButton.click();
+        });
+    }
 }
 
 // Actualizar la barra de progreso mientras la canción se reproduce
@@ -95,3 +120,4 @@ volumeButton.addEventListener("click", () => {
 volumeSlider.addEventListener("input", () => {
     audioPlayer.volume = volumeSlider.value;
 });
+
