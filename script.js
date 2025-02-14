@@ -26,6 +26,23 @@ const nextButton = document.getElementById("next");
 const songTitle = document.getElementById("song-title");
 const progressBar = document.getElementById("progress-bar");
 
+// Wake Lock API para evitar que la app se duerma
+defineWakeLock();
+async function defineWakeLock() {
+    let wakeLock = null;
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+    } catch (err) {
+        console.error('No se pudo activar Wake Lock:', err);
+    }
+
+    document.addEventListener("visibilitychange", async () => {
+        if (document.visibilityState === "visible" && wakeLock === null) {
+            await defineWakeLock();
+        }
+    });
+}
+
 function loadSong(index) {
     audioPlayer.src = songs[index];
     audioPlayer.play().catch(error => console.log("Error al reproducir:", error));
