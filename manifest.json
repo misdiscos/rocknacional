@@ -1,6 +1,6 @@
 {
-    "name": "Reproductor de Música",
-    "short_name": "Música",
+    "name": "Rock Nacional Player",
+    "short_name": "RNPlayer",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#000000",
