@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registrado', reg))
+                .catch(err => console.log('Error al registrar el Service Worker', err));
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="player">
+        <h1 id="title">Clicks modernos</h1>
+        <div id="song-title"></div>
+        <img src="11/TAPA.JPG" alt="Portada del álbum" class="album-cover">
+
+        <audio id="audio-player" controls></audio>
+        <div class="controls">
+            <button id="prev">⏮️</button>
+            <button id="play-pause">▶️</button>
+            <button id="next">⏭️</button>
+        </div>
+               
+        <p id="song-title"></p>
+        
+        <!-- Barra de progreso -->
+        <input type="range" id="progress-bar" value="0" min="0" step="1">
+        
+        <!-- Control de volumen -->
+        <div id="volume-control">
+            <button id="volume-btn">🔊</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+        </div>
+        
+    </div>
+    <script src="script11.js"></script>
+</body>
+</html>
