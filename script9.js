@@ -1,12 +1,6 @@
 // Lista de canciones en la carpeta "2"
 const songs = [
-    "3/01. Encadenado al Anima.mp3",
-    "3/02. Durazno Sangrando.mp3",
-    "3/03. Pleamar de Aguilas.mp3",
-    "3/04. En una Lejana Playa del Animus.mp3",
-    "3/05. Dios de Adolescencia.mp3"
     
-
 "9/01 - Los Piojos - Olvidate (Ia Ves).mp3",
 "9/02 - Los Piojos - Chac Tu Chac.mp3",
 "9/03 - Los Piojos - Desde Lejos No Se Ve .mp3",
