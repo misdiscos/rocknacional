@@ -26,6 +26,18 @@ body {
     transition: transform 0.2s;
 }
 
+.back-btn-2 {
+    font-size: 24px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
 .back-btn:hover {
     transform: scale(1.5);
 }
@@ -54,6 +66,10 @@ body {
     margin-bottom: 20px;
 }
 
+#signature a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color del texto según el padre */
+}
 #audio-player {
     display: none;
 }

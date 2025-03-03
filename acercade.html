@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R0cK NAci0NAl PlAyER</title>
+    <link rel="icon" href="icon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registrado', reg))
+                .catch(err => console.log('Error al registrar el Service Worker', err));
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="player">
+              
+        <!-- Interruptor de modo claro/oscuro -->
+        <div class="theme-switch">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        
+        <h1 id="title">Hecho desde José C. Paz</h1>
+        <h1 id="title">para disfrutar la música</h1>
+        <h1 id="title">sin interruciones!</h1>
+        <div id="song-title">VERSIÓN 3.5.1</div>
+        <div id="song-title">Marzo 2025</div>
+        <div id="song-title">fydito@gmail.com</div>
+
+        <img src="fydito.gif" alt="Fydito!!!" class="album-index">
+        
+
+        <button id="back" class="back-btn-2">↩</button>
+                <div id="signature">Fydito :)</div>
+        
+    </div>
+    
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
+    
+        // Cargar tema guardado
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.add("light-mode");
+            themeToggle.checked = true;
+        }
+    
+        // Cambiar tema y guardarlo
+        themeToggle.addEventListener("change", () => {
+            if (themeToggle.checked) {
+                body.classList.add("light-mode");
+                localStorage.setItem("theme", "light");
+            } else {
+                body.classList.remove("light-mode");
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+    <script>
+        document.getElementById("back").addEventListener("click", () => {
+            window.history.back();
+        });
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
