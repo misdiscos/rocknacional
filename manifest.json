@@ -1,10 +1,13 @@
 {
-    "name": "Rock Nacional Player",
+    "name": "Rock Nacional Player 3.5",
     "short_name": "RNPlayer",
-    "start_url": "index.html",
+    "description": "Escuchá los mejores discos de Rock Nacional en una app rápida y offline.",
+    "start_url": "/index.html",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "icon-192.png",
@@ -14,6 +17,16 @@
         {
             "src": "icon-512.png",
             "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-128.png",
+            "sizes": "128x128",
             "type": "image/png"
         }
     ]
