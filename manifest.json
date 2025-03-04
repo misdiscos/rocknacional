@@ -4,10 +4,11 @@
     "description": "Escuchá los mejores discos de Rock Nacional en una app rápida y offline.",
     "start_url": "/rocknacional/index.html",
     "scope": "/rocknacional/",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#000000",
     "theme_color": "#000000",
     "orientation": "portrait",
+    
     "icons": [
         {
             "src": "icon-192.png",
