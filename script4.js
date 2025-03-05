@@ -40,13 +40,13 @@ let estado = 0; // 0: tapa, 1: contratapa, 2: vinilo
 
 albumCover.addEventListener("click", () => {
     if (estado === 0) {
-        albumCover.src = "tapas/tapa4.jpg"; // Muestra la contratapa
+        albumCover.src = "tapas/contratapa4.jpg"; // Muestra la contratapa
         estado = 1;
     } else if (estado === 1) {
-        albumCover.src = "tapas/contratapa4.jpg"; // Muestra el vinilo
+        albumCover.src = "vinilo2.gif"; // Muestra el vinilo
         estado = 2;
     } else {
-        albumCover.src = "vinilo2.gif"; // Vuelve a la tapa
+        albumCover.src = "tapas/tapa4.jpg"; // Vuelve a la tapa    
         estado = 0;
     }
 });
