@@ -32,13 +32,19 @@ const volumeSlider = document.getElementById("volume-slider");
 const albumCover = document.querySelector(".album-cover");
 let showingBack = false; // Estado para saber qué imagen está mostrando
 
+let estado = 0; // 0: tapa, 1: contratapa, 2: vinilo
+
 albumCover.addEventListener("click", () => {
-    if (showingBack) {
-        albumCover.src = "tapas/tapa14.jpg"; // Vuelve a la tapa
+    if (estado === 0) {
+        albumCover.src = "tapas/tapa14.jpg"; // Muestra la contratapa
+        estado = 1;
+    } else if (estado === 1) {
+        albumCover.src = "tapas/contratapa14.jpg"; // Muestra el vinilo
+        estado = 2;
     } else {
-        albumCover.src = "tapas/contratapa14.jpg"; // Muestra la contratapa
+        albumCover.src = "vinilo2.gif"; // Vuelve a la tapa
+        estado = 0;
     }
-    showingBack = !showingBack; // Cambia el estado
 });
 
 
