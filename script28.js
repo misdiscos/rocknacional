@@ -40,7 +40,8 @@ let estado = 0; // 0: tapa, 1: contratapa, 2: vinilo
 
 albumCover.addEventListener("click", () => {
     if (estado === 0) {
-        albumCover.src = "tapas/contratapa28.jpg"; // Muestra la contratapa
+        const randomVinyl = ["vinilo1.gif", "vinilo2.gif", "vinilo3.gif", "vinilo4.gif", "vinilo5.gif", "vinilo6.gif", "vinilo7.gif", "vinilo8.gif", "vinilo9.gif", "vinilo10.gif"][Math.floor(Math.random() * 10)];
+        albumCover.src = randomVinyl; // Muestra un vinilo aleatorio
         estado = 1;
     } else if (estado === 1) {
         albumCover.src = "vinilo2.gif"; // Muestra el vinilo
